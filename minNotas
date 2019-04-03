@@ -1,0 +1,4 @@
+para ejecutar el servidor de symfony es desde esta ruta con el siguiente comando
+php bin/console server:run
+
+para ejecutar un .sh en ubunto es: sh nombreArchivo.sh
