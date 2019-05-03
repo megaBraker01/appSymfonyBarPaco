@@ -5,3 +5,19 @@
    * Read the documentation at https://symfony.com/doc
 
 - Para ejecutar un .sh en ubunto es: sh nombreArchivo.sh
+
+CREAR NUEVO USUARIO EN MYSQL
+1- mysql --user=root mysql
+2- CREATE USER 'username'@'localhost' IDENTIFIED BY 'some_pass'; (en este caso username = phpmyadmin)
+3- GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost' WITH GRANT OPTION;
+4- FLUSH PRIVILEGES;
+
+VER INFO DE USUARIO EN MYSQL
+select User, authentication_string, password_expired, password_lifetime , password_last_changed  from mysql.user;
+
+CAMBIAR CONTRASEÑA USUARIO EN MYSQL
+set password for phpmyadmin@localhost = password('newPassword');
+
+luego se tiene que confirgurar el parameters.yml
+database_user: phpmyadmin
+database_password: 'asdf'

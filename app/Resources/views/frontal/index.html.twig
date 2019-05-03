@@ -47,4 +47,30 @@ Esta es mi pagina en symfony
       </a>
     </div>
   </header>
+  
+  <div class="container">
+    <!-- Portfolio Section -->
+    <h1 class="my-4">Nuestras Mejores Tapas</h1>
+
+    <div class="row">
+
+      {% for tapa in tapas %}
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="tapa/{{ tapa.slug }}"><img class="card-img-top" src="img/{{ tapa.foto }}" alt="{{ tapa.nombre }}"></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="tapa/{{ tapa.slug }}">{{ tapa.nombre }}</a>
+            </h4>
+            <p class="card-text">
+              {{ tapa.descripcion }}
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    <!-- /.row -->
+
+  </div>
+</div>
 {% endblock %}
