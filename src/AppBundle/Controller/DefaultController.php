@@ -33,28 +33,44 @@ class DefaultController extends Controller
      */
     public function contactarAction(Request $request, $sitio = "todos")
     {
+        $datos = [];
         switch($sitio){
-            case "vlc":
-                $ciudad = 'Valencia';
-                $mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197294.47340645303!2d-0.5015954687885393!3d39.40770125212401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4cf0efb06f%3A0xb4a351011f7f1d39!2sValencia!5e0!3m2!1ses!2ses!4v1554279789308!5m2!1ses!2ses';
+            case "valencia":
+                $datos['ciudad'] = 'Valencia';
+                $datos['mapSrc'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197294.47340645303!2d-0.5015954687885393!3d39.40770125212401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4cf0efb06f%3A0xb4a351011f7f1d39!2sValencia!5e0!3m2!1ses!2ses!4v1554279789308!5m2!1ses!2ses';
+                $datos['direccion'] = "Calle en valencia, 64, 46000";
+                $datos['telefono'] = "685-698-556";
+                $datos['email'] = "barvalencia@gmail.com";
             break;
-            case "bcn":
-                $ciudad = 'Barcelona';
-                $mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95777.33921663332!2d2.078556139958734!3d41.39489748955842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49816718e30e5%3A0x44b0fb3d4f47660a!2sBarcelona!5e0!3m2!1ses!2ses!4v1554361864401!5m2!1ses!2ses';
+            case "barcelona":
+                $datos['ciudad'] = 'Barcelona';
+                $datos['mapSrc'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95777.33921663332!2d2.078556139958734!3d41.39489748955842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49816718e30e5%3A0x44b0fb3d4f47660a!2sBarcelona!5e0!3m2!1ses!2ses!4v1554361864401!5m2!1ses!2ses';
+                $datos['direccion'] = "Calle en Barcelona, 64, 08000";
+                $datos['telefono'] = "685-698-556";
+                $datos['email'] = "barbarcelona@gmail.com";
             break;
-            case "mdr":
-                $ciudad = 'Madrid';
-                $mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194348.1398105032!2d-3.8196206842121603!3d40.43786975948415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid!5e0!3m2!1ses!2ses!4v1554361764016!5m2!1ses!2ses';
+            case "madrid":
+                $datos['ciudad'] = 'Madrid';
+                $datos['mapSrc'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194348.1398105032!2d-3.8196206842121603!3d40.43786975948415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid!5e0!3m2!1ses!2ses!4v1554361764016!5m2!1ses!2ses';
+                $datos['direccion'] = "Calle en Madrid, 64, 28000";
+                $datos['telefono'] = "685-698-556";
+                $datos['email'] = "barmadrid@gmail.com";
             break;
             case "todos":
-                $ciudad = 'Central';
-                $mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194348.1398105032!2d-3.8196206842121603!3d40.43786975948415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid!5e0!3m2!1ses!2ses!4v1554361764016!5m2!1ses!2ses';
+                $datos['ciudad'] = 'Central';
+                $datos['mapSrc'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194348.1398105032!2d-3.8196206842121603!3d40.43786975948415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid!5e0!3m2!1ses!2ses!4v1554361764016!5m2!1ses!2ses';
+                $datos['direccion'] = "Calle en Madrid, 64, 28000";
+                $datos['telefono'] = "685-698-556";
+                $datos['email'] = "barmadrid@gmail.com";
             break;
             default:
-                $ciudad = 'Central';
-                $mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194348.1398105032!2d-3.8196206842121603!3d40.43786975948415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid!5e0!3m2!1ses!2ses!4v1554361764016!5m2!1ses!2ses';
+                $datos['ciudad'] = 'Central';
+                $datos['mapSrc'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194348.1398105032!2d-3.8196206842121603!3d40.43786975948415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid!5e0!3m2!1ses!2ses!4v1554361764016!5m2!1ses!2ses';
+                $datos['direccion'] = "Calle en Madrid, 64, 28000";
+                $datos['telefono'] = "685-698-556";
+                $datos['email'] = "barmadrid@gmail.com";
         }
-        return $this->render("frontal/bares.html.twig", ['ciudad' => $ciudad, 'mapSrc' => $mapSrc]);
+        return $this->render("frontal/bares.html.twig", $datos);
     }
 
     /**

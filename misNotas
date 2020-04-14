@@ -21,3 +21,18 @@ set password for phpmyadmin@localhost = password('newPassword');
 luego se tiene que confirgurar el parameters.yml
 database_user: phpmyadmin
 database_password: 'asdf'
+- Para acceder a mysql por consola, simplemente se tiene que ejecutar el siguiente comando:
+	mysql
+
+- ver bbdd por consola
+	show databases;
+
+- ver usuarios
+	select User from mysql.user;
+
+- usar una bbdd por consola
+	use nombreBaseDatos
+
+- para acceder a mySql desde consola (por si no tenemos acceso con un user comun)
+	1. cambiamos al usuario root con el siguiente comando: sudo su
+	2. 
